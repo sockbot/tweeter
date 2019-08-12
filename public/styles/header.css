@@ -1,15 +1,19 @@
 header {
   height: 400px;
-  top: 120px;
+  margin-top: 120px;
   left: 0px;
   right: 0px;
-  position: absolute; 
+  position: relative; 
   background-color: orange;
   background-image: url(http://www.transparenttextures.com/patterns/wide-rectangles.png);
 }
 
 header div {
   text-align: center;
+}
+
+header div h2 {
+  margin: 0;
 }
 
 .border {
