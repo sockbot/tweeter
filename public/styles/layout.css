@@ -21,6 +21,11 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+main.container {
+  width: 90%;
+  background-color: inherit;
+  margin: auto;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
