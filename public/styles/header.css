@@ -1,0 +1,17 @@
+header {
+  height: 400px;
+  top: 120px;
+  left: 0px;
+  right: 0px;
+  position: absolute; 
+  background-color: orange;
+  background-image: url(http://www.transparenttextures.com/patterns/wide-rectangles.png);
+}
+
+header div {
+  text-align: center;
+}
+
+.border {
+  border: red solid;
+}
