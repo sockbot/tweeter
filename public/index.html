@@ -37,10 +37,14 @@
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container border">
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam harum corrupti praesentium consequuntur voluptate cupiditate quis provident quasi architecto reprehenderit similique, officiis repellendus quia eius doloremque molestias, quo magnam voluptatum!</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam harum corrupti praesentium consequuntur voluptate cupiditate quis provident quasi architecto reprehenderit similique, officiis repellendus quia eius doloremque molestias, quo magnam voluptatum!</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam harum corrupti praesentium consequuntur voluptate cupiditate quis provident quasi architecto reprehenderit similique, officiis repellendus quia eius doloremque molestias, quo magnam voluptatum!</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam harum corrupti praesentium consequuntur voluptate cupiditate quis provident quasi architecto reprehenderit similique, officiis repellendus quia eius doloremque molestias, quo magnam voluptatum!</p>
+      <section class='new-tweet'>
+      <h2>Compose Tweet</h2>
+      <form method='POST' action='/tweets/'>
+        <textarea name="text" placeholder="What are you humming about?"></textarea>
+        <input type="submit" value="Tweet">
+        <span class="counter">140</span>
+      </form>
+    </section>
     </main>
 
   </body>
