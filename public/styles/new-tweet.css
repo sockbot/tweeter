@@ -1,3 +1,34 @@
+.container {
+}
+
+form {
+}
+
 .new-tweet {
-  margin: auto;  
+}
+
+textarea {
+  background-color: inherit;
+  width: 100%;
+  height: 40px;
+  resize: none;
+  border: 0;
+  border-bottom: thick #545149 solid;
+  color: #545149;
+}
+
+input {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  font-family: 'Bungee', cursive;
+  font-size: 80%;
+}
+
+.counter {
+  font-family: 'Bungee', cursive;
+  color: #545149;
+  position: relative;
+  left: 80%;
+  /* display: inline-block;
+  text-align: right; */
 }
