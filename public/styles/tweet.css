@@ -1,0 +1,35 @@
+.tweet-container {
+  border: thick #545149 solid;
+  padding: 2rem;
+}
+
+.tweet-container.hover {
+  box-shadow: 0.8rem 0.8rem #CCCCCC;
+}
+
+.tweet-handle {
+  float: right;
+  color: #CCCCCC;
+  font-weight: bold;
+  display: none;
+}
+
+.tweet-handle.hover {
+  display: inline;
+}
+
+.tweet-main {
+  border-bottom: thick #545149 solid;
+  padding: inherit;
+}
+
+.tweet-footer {
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.tweet-icons {
+  float: right;
+  color: darkblue;
+  font-size: 0.8rem;
+}
