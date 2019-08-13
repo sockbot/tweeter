@@ -1,12 +1,3 @@
-.container {
-}
-
-form {
-}
-
-.new-tweet {
-}
-
 textarea {
   background-color: inherit;
   width: 100%;
@@ -15,6 +6,7 @@ textarea {
   border: 0;
   border-bottom: thick #545149 solid;
   color: #545149;
+  font-weight: bold;
 }
 
 input {
@@ -27,8 +19,5 @@ input {
 .counter {
   font-family: 'Bungee', cursive;
   color: #545149;
-  position: relative;
-  left: 80%;
-  /* display: inline-block;
-  text-align: right; */
+  float: right;
 }
