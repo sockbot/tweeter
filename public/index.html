@@ -18,11 +18,10 @@
     
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
-    <script type="text/javascript" src="./scripts/app.js"></script>
-
+    
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -43,40 +42,13 @@
     <!-- Page-specific (main) content here -->
     <main class="container ">
       <section class='new-tweet'>
-      <h2>Compose Tweet</h2>
-      <form method='POST' action='/tweets/'>
-        <textarea rows="1" name="text" placeholder="What are you humming about?"></textarea>
-        <input type="submit" value="Tweet">
-        <span class="counter">140</span>
-      </form>
-      <article class="tweet-container">
-        <header>
-          <span>Elmer Lazzeri</span>
-          <span class="tweet-handle">@Lazzeri</span>
-        </header>
-        <main class=tweet-main>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, magnam, eos in reiciendis impedit doloribus repellendus exercitationem ducimus corporis sapiente vitae dolore eum, voluptas dignissimos accusamus nisi. Voluptatum, nemo a?
-        </main>
-        <footer class="tweet-footer">
-          <span>10 days ago</span>
-          <span class="tweet-icons"><i class="fas fa-flag"></i> <i class="fas fa-retweet"></i> <i class="fas fa-heart"></i></span>
-        </footer>
-      </article>
-      <article class="tweet-container">
-        <header>
-          <span>Elmer Lazzeri</span>
-          <span class="tweet-handle">@Lazzeri</span>
-        </header>
-        <main class=tweet-main>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, magnam, eos in reiciendis impedit doloribus repellendus exercitationem ducimus corporis sapiente vitae dolore eum, voluptas dignissimos accusamus nisi. Voluptatum, nemo a?
-        </main>
-        <footer class="tweet-footer">
-          <span>10 days ago</span>
-          <span class="tweet-icons"><i class="fas fa-flag"></i> <i class="fas fa-retweet"></i> <i class="fas fa-heart"></i></span>
-        </footer>
-      </article>
-    </section>
+        <h2>Compose Tweet</h2>
+        <form method='POST' action='/tweets/'>
+          <textarea rows="1" name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>
     </main>
-
   </body>
 </html>

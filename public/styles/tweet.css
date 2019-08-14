@@ -4,7 +4,7 @@
   margin: 1em;
 }
 
-.tweet-container.hover {
+.tweet-container:hover {
   box-shadow: 0.8rem 0.8rem #CCCCCC;
 }
 
@@ -15,7 +15,7 @@
   display: none;
 }
 
-.tweet-handle.hover {
+.tweet-handle:hover {
   display: inline;
 }
 
