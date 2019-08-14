@@ -41,9 +41,11 @@ $(document).ready(function() {
   // turns a single tweet object into HTML
   // TODO: build programmatically using jQuery methods in order to sanitize input
   const createTweetElement = function(tweetObj) {
+    console.log(tweetObj)
     return `
     <article class="tweet-container">
       <header>
+        <img class="tweet-avatar" src=${tweetObj.user.avatars}/>
         <span>${tweetObj.user.name}</span>
         <span class="tweet-handle">${tweetObj.user.handle}</span>
       </header>
@@ -60,14 +62,16 @@ $(document).ready(function() {
 
   // renders an array of tweet objects
   const renderTweets = function(tweetObjArr) {
+    $('#tweet-container').empty();
     tweetObjArr.reverse();
     for (const obj of tweetObjArr) {
       const $tweet = createTweetElement(obj);
-      $('main.container').append($tweet);
+      $('#tweet-container').append($tweet);
     }
   };
 
-  const loadtweets = function() {
+  // returns a promise to load tweets from /tweets
+  const loadTweets = function() {
     return $.ajax('/tweets', {
       method: 'GET',
     })
@@ -82,15 +86,21 @@ $(document).ready(function() {
     } else if ($textarea.val().length > MAX_TWEET_LENGTH) {
       alert(`Maximum tweet length is ${MAX_TWEET_LENGTH}`)
     } else {
-      alert('posting tweet!')
       $.ajax('/tweets',
         {
           method:   'POST',
           data:     $(this).serialize()
         }
-      ).fail(err => console.log(err.statusText))
+      ).then(() => {
+        refreshTweets();
+      })
     }
-  });
+  })
 
-  loadtweets().then(renderTweets).fail(err => console.log(err.statusText));
+  // load and render tweets
+  const refreshTweets = function() {
+    loadTweets().then(renderTweets).fail(err => console.log(err.statusText));
+  }
+
+  refreshTweets();
 });

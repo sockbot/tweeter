@@ -8,6 +8,13 @@
   box-shadow: 0.8rem 0.8rem #CCCCCC;
 }
 
+.tweet-avatar {
+  float: left;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 0.5rem;
+}
+
 .tweet-handle {
   float: right;
   color: #CCCCCC;
