@@ -14,8 +14,7 @@
   font-weight: bold;
   display: none;
 }
-
-.tweet-handle:hover {
+.tweet-container:hover .tweet-handle {
   display: inline;
 }
 
