@@ -8,6 +8,8 @@
 
 $(document).ready(function() {
 
+  const MAX_TWEET_LENGTH = 140;
+
   // calculates the amount of time passed since timestamp (in milliseconds) and returns a string in human-readable format
   // TODO: improve function to handle plural and singular better, handle leap years and DST/PST edge cases, use library?
   const timePassed = function(timestamp) {
@@ -74,12 +76,20 @@ $(document).ready(function() {
   // on submit, serialize the form data and POST it to /tweets
   $('section.new-tweet > form').on('submit', function(event) {
     event.preventDefault();
-    $.ajax('/tweets',
-      {
-        method:   'POST',
-        data:     $(this).serialize()
-      }
-    )
+    const $textarea = $('section.new-tweet > form > textarea')
+    if ($textarea.val().trim() == "") {
+      alert('Can\'t tweet nothing!')
+    } else if ($textarea.val().length > MAX_TWEET_LENGTH) {
+      alert(`Maximum tweet length is ${MAX_TWEET_LENGTH}`)
+    } else {
+      alert('posting tweet!')
+      $.ajax('/tweets',
+        {
+          method:   'POST',
+          data:     $(this).serialize()
+        }
+      ).fail(err => console.log(err.statusText))
+    }
   });
 
   loadtweets().then(renderTweets).fail(err => console.log(err.statusText));
