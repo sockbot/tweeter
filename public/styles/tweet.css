@@ -1,6 +1,7 @@
 .tweet-container {
   border: thick #545149 solid;
   padding: 2rem;
+  margin: 1em;
 }
 
 .tweet-container.hover {
