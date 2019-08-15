@@ -40,12 +40,13 @@
         <img src="/images/profile-hex.png" alt="">
       </div>
       <div>
-        <h2>Andy Chan</h2>
+        <h2><strong>Andy</strong> Chan</h2>
       </div>
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container ">
       <section class='new-tweet'>
+        <error class="error"></error> 
         <h2>Compose Tweet</h2>
         <form method='POST' action='/tweets/'>
           <textarea rows="1" name="text" placeholder="What are you humming about?"></textarea>
@@ -54,7 +55,7 @@
         </form>
       </section>
       <div id='tweet-container'>
-        
+
       </div>
     </main>
   </body>

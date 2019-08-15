@@ -85,11 +85,12 @@ $(document).ready(function() {
   // on submit, serialize the form data and POST it to /tweets
   $('section.new-tweet > form').on('submit', function(event) {
     event.preventDefault();
+    $('.error').slideUp();
     const $textarea = $('section.new-tweet > form > textarea')
     if ($textarea.val().trim() == "") {
-      alert('Can\'t tweet nothing!')
+      $('.error').text(`${MAX_TWEET_LENGTH} characters and you have nothing to say?`).slideDown();
     } else if ($textarea.val().length > MAX_TWEET_LENGTH) {
-      alert(`Maximum tweet length is ${MAX_TWEET_LENGTH}`)
+      $('.error').text(`Maximum tweet length is ${MAX_TWEET_LENGTH} characters!`).slideDown();
     } else {
       $.ajax('/tweets',
         {
