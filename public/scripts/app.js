@@ -93,16 +93,18 @@ $(document).ready(function() {
       $('.error').text(`Maximum tweet length is ${MAX_TWEET_LENGTH} characters!`).slideDown();
     } else {
       $.ajax('/tweets',
-        {
-          method:   'POST',
-          data:     $(this).serialize()
-        }
+      {
+        method:   'POST',
+        data:     $(this).serialize()
+      }
       ).then(() => {
+        // $textarea.val('');
         refreshTweets();
       })
     }
   })
 
+  // show and hide new tweet div when clicking the toggle new tweet button
   $('.toggle-button').on('click', function() {
     $('.new-tweet').slideToggle();
     $('textarea').focus();

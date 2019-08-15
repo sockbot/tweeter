@@ -2,10 +2,6 @@
   display: none;
 }
 
-form {
-  margin-bottom: 120px;
-}
-
 textarea {
   background-color: inherit;
   width: 100%;
@@ -14,6 +10,7 @@ textarea {
   border-bottom: thick #545149 solid;
   color: #545149;
   font-weight: bold;
+  font-size: 1rem;
 }
 
 input {
@@ -21,6 +18,10 @@ input {
   color: #FFFFFF;
   font-family: 'Bungee', cursive;
   font-size: 80%;
+}
+
+input:hover {
+  font-size: 90%;
 }
 
 .counter {

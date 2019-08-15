@@ -1,6 +1,6 @@
 $(document).ready(function() {
   const maxTweetLength = 140;
-  
+
   $('.new-tweet > form > textarea').on('keyup', function() {
     const tweetChars = $(this).val().length;
     const remainingChars = maxTweetLength - tweetChars;

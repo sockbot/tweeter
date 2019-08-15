@@ -40,3 +40,8 @@
   color: darkblue;
   font-size: 0.8rem;
 }
+
+.tweet-icons i {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}

@@ -13,6 +13,7 @@ header > div {
   color: white;
 }
 
-header > div > h2 {
+#username {
   margin: 0;
+  font-weight: normal;
 }
