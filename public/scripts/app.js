@@ -105,6 +105,7 @@ $(document).ready(function() {
 
   $('.toggle-button').on('click', function() {
     $('.new-tweet').slideToggle();
+    $('textarea').focus();
   })
 
   // load and render tweets
