@@ -1,4 +1,24 @@
 "use strict";
+// declaring variables and functions in global scope so it can be accessed from other js files
+// this is ok as long as they are not called except within a document.ready scope
+// also this means this js file must be loaded on every page of the app in order for other files to reference these global declarations
+const MAX_TWEET_LENGTH = 140;
+
+const calcRemainingChars = function() {
+  return MAX_TWEET_LENGTH - $('textarea').val().length;
+}
+
+const updateCounter = function(remainingChars) {
+  const counter = $('span.counter');
+
+  counter.text(remainingChars);
+
+  if (remainingChars < 0) {
+    counter.addClass('red');
+  } else {
+    counter.removeClass('red');
+  }
+}
 
 /*
  * Client-side JS logic goes here
@@ -7,8 +27,6 @@
  */
 
 $(document).ready(function() {
-
-  const MAX_TWEET_LENGTH = 140;
 
   // calculates the amount of time passed since timestamp (in milliseconds) and returns a string in human-readable format
   // TODO: improve function to handle plural and singular better, handle leap years and DST/PST edge cases, use library?
@@ -98,8 +116,10 @@ $(document).ready(function() {
         data:     $(this).serialize()
       }
       ).then(() => {
-        // $textarea.val('');
+        $textarea.val('');
+        updateCounter(calcRemainingChars());
         refreshTweets();
+        $textarea.focus();
       })
     }
   })
