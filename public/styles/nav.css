@@ -11,3 +11,18 @@ nav {
   right: 0;
   left: 0;
 }
+
+nav .toggle-button {
+  font-family: 'Source Sans Pro', sans-serif;
+  float: right;
+  font-size: 1rem;
+  text-align: center;
+}
+
+nav .toggle-button:hover {
+  text-decoration: underline;
+}
+
+.fa-chevron-circle-down {
+  color: red;
+}

@@ -75,7 +75,7 @@ $(document).ready(function() {
     }
   };
 
-  // returns a promise to load tweets from /tweets
+  // returns a promise to GET tweets from /tweets
   const loadTweets = function() {
     return $.ajax('/tweets', {
       method: 'GET',
@@ -100,6 +100,10 @@ $(document).ready(function() {
         refreshTweets();
       })
     }
+  })
+
+  $('.toggle-button').on('click', function(event) {
+    $('.new-tweet').slideToggle();
   })
 
   // load and render tweets
