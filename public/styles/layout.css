@@ -30,3 +30,16 @@ main.container {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+#scroll-up {
+  color: red;
+  font-size: 3rem;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
+}
+
+#scroll-up:hover {
+  font-size: 3.3rem;
+}

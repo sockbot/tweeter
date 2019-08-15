@@ -103,7 +103,7 @@ $(document).ready(function() {
     }
   })
 
-  $('.toggle-button').on('click', function(event) {
+  $('.toggle-button').on('click', function() {
     $('.new-tweet').slideToggle();
   })
 
