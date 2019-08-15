@@ -39,25 +39,30 @@ $(document).ready(function() {
   };
   
   // turns a single tweet object into HTML
-  // TODO: build programmatically using jQuery methods in order to sanitize input
   const createTweetElement = function(tweetObj) {
-    console.log(tweetObj)
-    return `
-    <article class="tweet-container">
-      <header>
-        <img class="tweet-avatar" src=${tweetObj.user.avatars}/>
-        <span>${tweetObj.user.name}</span>
-        <span class="tweet-handle">${tweetObj.user.handle}</span>
-      </header>
-      <main class=tweet-main>
-        ${tweetObj.content.text}
-      </main>
-      <footer class="tweet-footer">
-        <span>${timePassed(tweetObj.created_at)}</span>
-        <span class="tweet-icons"><i class="fas fa-flag"></i> <i class="fas fa-retweet"></i> <i class="fas fa-heart"></i></span>
-      </footer>
-    </article>
-    `;
+    const $avatar = $('<img class="tweet-avatar"/>').attr('src', tweetObj.user.avatars);
+    const $username = $('<span>').text(`${tweetObj.user.name}`);
+    const $handle = $('<span class="tweet-handle">').text(`${tweetObj.user.handle}`);
+    const $header = $('<header>')
+      .append($avatar)
+      .append($username)
+      .append($handle);
+
+    const $main = $('<main class="tweet-main">').text(tweetObj.content.text);
+
+    const $timePassed = $('<span>').text(timePassed(tweetObj.created_at));
+    const $tweetIcons = $('<span class="tweet-icons">')
+      .append('<i class="fas fa-flag"></i>')
+      .append('<i class="fas fa-retweet"></i>')
+      .append('<i class="fas fa-heart"></i>')
+    const $footer = $('<footer class="tweet-footer">')
+      .append($timePassed)
+      .append($tweetIcons)
+
+    return $('<article class="tweet-container">')
+      .append($header)
+      .append($main)
+      .append($footer);
   };
 
   // renders an array of tweet objects
