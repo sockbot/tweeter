@@ -55,6 +55,7 @@ main.container {
     justify-content: center;
   }
   body > header {
+    /* fix the width of the header to the width of the profile image */
     width: 256px;
   }
   main.container {

@@ -2,7 +2,23 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+Technologies used:
+
+- CSS
+- Flexbox
+- jQuery
+- Ajax
+- Node.js
+
+## How it works
+
+A user can create a tweet of up to 140 characters that is sent to the Node server and stored in memory.
+
+The user input is validated on the client side using jQuery to ensure empty tweets and over-length tweets are not submitted. jQuery also handles dynamic updating and changing of UI elements like clearing text areas and toggling visibility of buttons or error messages.
+
+The user input is posted to the server using an asynchronous Ajax call and retrieved immediately by the client using another Ajax call. User input is sanitized using jQuery methods before being inserted into the DOM to prevent cross-site scripting. The user input is dynamically inserted into the DOM without requiring a page refresh.
+
+The page is styled using CSS and Flexbox with a responsive design for mobile devices up to 768px wide and for tablets and desktops over 768px wide.
 
 ## Getting Started
 
@@ -13,5 +29,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Dependencies
 
-- Express
+- body-parser
+- chance
+- express
+- md5
+- nodemon
 - Node 5.10.x or above
