@@ -1,22 +1,25 @@
+$text-color:  white;
+$button-color:  red;
+
 nav {
-  font-family: "Bungee", cursive;
+  font-family: 'Bungee', cursive;
   height: 60px;
   width: 100%;
   background-color: #4056A1;
-  color: white;
+  color: $text-color;
   padding: 1.5em;
   z-index: 9999;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  display: flex;
+  display:flex;
   justify-content: space-between;
   align-items: center;
 }
 
 nav .toggle-button {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   float: right;
   font-size: 1rem;
   text-align: center;
@@ -27,7 +30,7 @@ nav .toggle-button:hover {
 }
 
 .fa-chevron-circle-down {
-  color: red;
+  color: $button-color;
 }
 
 @media only screen and (min-width: 768px) {
@@ -35,5 +38,3 @@ nav .toggle-button:hover {
     height: 120px;
   }
 }
-
-/*# sourceMappingURL=nav.css.map */

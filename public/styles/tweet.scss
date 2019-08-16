@@ -1,12 +1,16 @@
+$primary-grey:    #545149;
+$secondary-grey:  #CCCCCC;
+$primary-blue:    #4056A1;
+
 .tweet-container {
-  border: thick #545149 solid;
+  border: thick $primary-grey solid;
   padding: 2rem;
   margin: 1em;
   word-wrap: break-word;
 }
 
 .tweet-container:hover {
-  box-shadow: 0.8rem 0.8rem #CCCCCC;
+  box-shadow: 0.8rem 0.8rem $secondary-grey;
 }
 
 .tweet-avatar {
@@ -18,11 +22,10 @@
 
 .tweet-handle {
   float: right;
-  color: #CCCCCC;
+  color: $secondary-grey;
   font-weight: bold;
   display: none;
 }
-
 .tweet-container:hover .tweet-handle {
   display: inline;
 }
@@ -32,7 +35,7 @@
 }
 
 .tweet-main {
-  border-bottom: thick #545149 solid;
+  border-bottom: thick $primary-grey solid;
   padding: inherit;
 }
 
@@ -43,7 +46,7 @@
 
 .tweet-icons {
   float: right;
-  color: #4056A1;
+  color: $primary-blue;
   font-size: 0.8rem;
   display: none;
 }
@@ -58,5 +61,3 @@
     margin-top: 120px;
   }
 }
-
-/*# sourceMappingURL=tweet.css.map */

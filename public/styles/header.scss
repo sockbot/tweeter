@@ -1,9 +1,12 @@
+$text-color:        white;
+$secondary-orange:  orange;
+
 body > header {
   margin-top: 72px;
   left: 0px;
   right: 0px;
-  position: relative;
-  background-color: orange;
+  position: relative; 
+  background-color: $secondary-orange;
   background-image: url(http://www.transparenttextures.com/patterns/wide-rectangles.png);
   display: flex;
   align-items: center;
@@ -12,14 +15,13 @@ body > header {
 
 header > div {
   text-align: center;
-  color: white;
+  color: $text-color;
 }
 
 #username {
   margin: 0;
   font-weight: normal;
 }
-
 @media only screen and (min-width: 768px) {
   body > header {
     margin-top: 120px;
@@ -27,5 +29,3 @@ header > div {
     display: block;
   }
 }
-
-/*# sourceMappingURL=header.css.map */

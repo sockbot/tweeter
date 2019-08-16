@@ -1,3 +1,7 @@
+$primary-grey:    #545149;
+$background-color:#f4f1ec;
+$button-color:      red;
+
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
@@ -6,7 +10,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,11 +17,12 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: $primary-grey;
+  background-color: $background-color;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 main.container {
@@ -26,12 +30,12 @@ main.container {
   margin: auto;
   margin-bottom: 120px;
 }
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 #scroll-up {
-  color: red;
+  color: $button-color;
   font-size: 3rem;
   position: fixed;
   right: 1rem;
@@ -44,25 +48,21 @@ main.container {
 }
 
 @media only screen and (min-width: 768px) {
+
   html {
     display: flex;
     justify-content: center;
   }
-
   body {
     display: flex;
     max-width: 80%;
     justify-content: center;
   }
-
   body > header {
     /* fix the width of the header to the width of the profile image */
     width: 256px;
   }
-
   main.container {
     width: calc(100% - 256px);
   }
 }
-
-/*# sourceMappingURL=layout.css.map */

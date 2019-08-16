@@ -1,3 +1,8 @@
+$text-color:          white;
+$primary-grey:        #545149;
+$submit-button-color: #4056A1;
+$alert-color:         red;
+
 .new-tweet {
   display: none;
   padding-left: 30px;
@@ -9,16 +14,16 @@ textarea {
   width: 100%;
   resize: none;
   border: 0;
-  border-bottom: thick #545149 solid;
-  color: #545149;
+  border-bottom: thick $primary-grey solid;
+  color: $primary-grey;
   font-weight: bold;
   font-size: 1rem;
 }
 
 input {
-  background-color: #4056A1;
-  color: white;
-  font-family: "Bungee", cursive;
+  background-color: $submit-button-color;
+  color: $text-color;
+  font-family: 'Bungee', cursive;
   font-size: 80%;
 }
 
@@ -27,18 +32,18 @@ input:hover {
 }
 
 .counter {
-  font-family: "Bungee", cursive;
-  color: #545149;
+  font-family: 'Bungee', cursive;
+  color: $primary-grey;
   float: right;
 }
 
 .red {
-  color: red;
+  color: $alert-color;
 }
 
 .error {
-  color: red;
-  border: red solid;
+  color: $alert-color;
+  border: $alert-color solid;
   width: 100%;
   text-align: center;
   margin: 1rem;
@@ -55,5 +60,3 @@ input:hover {
     padding-right: 30px;
   }
 }
-
-/*# sourceMappingURL=new-tweet.css.map */
