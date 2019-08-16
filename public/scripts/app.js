@@ -1,4 +1,3 @@
-"use strict";
 // declaring variables and functions in global scope so it can be accessed from other js files
 // this is ok as long as they are not called except within a document.ready scope
 // also this means this js file must be loaded on every page of the app in order for other files to reference these global declarations
@@ -6,19 +5,18 @@ const MAX_TWEET_LENGTH = 140;
 
 const calcRemainingChars = function() {
   return MAX_TWEET_LENGTH - $('textarea').val().length;
-}
+};
 
 const updateCounter = function(remainingChars) {
   const counter = $('span.counter');
 
   counter.text(remainingChars);
-
   if (remainingChars < 0) {
     counter.addClass('red');
   } else {
     counter.removeClass('red');
   }
-}
+};
 
 /*
  * Client-side JS logic goes here
@@ -28,8 +26,11 @@ const updateCounter = function(remainingChars) {
 
 $(document).ready(function() {
 
+  const printError = function(err) {
+    console.log(`Promise failed with error: ${err}`);
+  };
+
   // calculates the amount of time passed since timestamp (in milliseconds) and returns a string in human-readable format
-  // TODO: improve function to handle plural and singular better, handle leap years and DST/PST edge cases, use library?
   const timePassed = function(timestamp) {
     const timeNow = Date.now();
     const millsPassed = timeNow - timestamp;
@@ -56,9 +57,9 @@ $(document).ready(function() {
     return "Just now";
   };
   
-  // turns a single tweet object into HTML
+  // turns a single tweet object into jQuery HTML
   const createTweetElement = function(tweetObj) {
-    const $avatar = $('<img class="tweet-avatar"/>').attr('src', tweetObj.user.avatars);
+    const $avatar = $('<img class="tweet-avatar">').attr('src', tweetObj.user.avatars);
     const $username = $('<span>').text(`${tweetObj.user.name}`);
     const $handle = $('<span class="tweet-handle">').text(`${tweetObj.user.handle}`);
     const $header = $('<header>')
@@ -72,10 +73,10 @@ $(document).ready(function() {
     const $tweetIcons = $('<span class="tweet-icons">')
       .append('<i class="fas fa-flag"></i>')
       .append('<i class="fas fa-retweet"></i>')
-      .append('<i class="fas fa-heart"></i>')
+      .append('<i class="fas fa-heart"></i>');
     const $footer = $('<footer class="tweet-footer">')
       .append($timePassed)
-      .append($tweetIcons)
+      .append($tweetIcons);
 
     return $('<article class="tweet-container">')
       .append($header)
@@ -83,7 +84,7 @@ $(document).ready(function() {
       .append($footer);
   };
 
-  // renders an array of tweet objects
+  // renders an array of tweet objects to the #tweet-container
   const renderTweets = function(tweetObjArr) {
     $('#tweet-container').empty();
     tweetObjArr.reverse();
@@ -95,45 +96,39 @@ $(document).ready(function() {
 
   // returns a promise to GET tweets from /tweets
   const loadTweets = function() {
-    return $.ajax('/tweets', {
-      method: 'GET',
-    })
-  }
+    return $.get('/tweets').fail(err => printError(err.statusText));
+  };
   
   // on submit, serialize the form data and POST it to /tweets
-  $('section.new-tweet > form').on('submit', function(event) {
+  $('form').on('submit', function(event) {
     event.preventDefault();
     $('.error').slideUp();
-    const $textarea = $('section.new-tweet > form > textarea')
-    if ($textarea.val().trim() == "") {
-      $('.error').text(`${MAX_TWEET_LENGTH} characters and you have nothing to say?`).slideDown();
+    const $textarea = $('textarea');
+    if ($textarea.val().trim() == "") { // using == to broadly match empty string
+      $('.error').slideDown().text(`${MAX_TWEET_LENGTH} characters and you have nothing to say?`);
     } else if ($textarea.val().length > MAX_TWEET_LENGTH) {
-      $('.error').text(`Maximum tweet length is ${MAX_TWEET_LENGTH} characters!`).slideDown();
+      $('.error').slideDown().text(`Maximum tweet length is ${MAX_TWEET_LENGTH} characters!`);
     } else {
-      $.ajax('/tweets',
-      {
-        method:   'POST',
-        data:     $(this).serialize()
-      }
-      ).then(() => {
-        $textarea.val('');
-        updateCounter(calcRemainingChars());
-        refreshTweets();
-        $textarea.focus();
-      })
+      $.post('/tweets', $(this).serialize())
+        .then(() => {
+          $textarea.val('').focus();
+          updateCounter(calcRemainingChars());
+          refreshTweets();
+        })
+        .fail(err => printError(err.statusText));
     }
-  })
+  });
 
   // show and hide new tweet div when clicking the toggle new tweet button
   $('.toggle-button').on('click', function() {
     $('.new-tweet').slideToggle();
     $('textarea').focus();
-  })
+  });
 
   // load and render tweets
   const refreshTweets = function() {
-    loadTweets().then(renderTweets).fail(err => console.log(err.statusText));
-  }
+    loadTweets().then(renderTweets).fail(err => printError(err.statusText));
+  };
 
   refreshTweets();
 });
