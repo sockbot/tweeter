@@ -19,7 +19,7 @@ header > div {
   margin: 0;
   font-weight: normal;
 }
-@media only screen and (min-width: 639px) {
+@media only screen and (min-width: 768px) {
   body > header {
     margin-top: 120px;
     height: 400px;

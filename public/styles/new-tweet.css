@@ -47,7 +47,7 @@ input:hover {
   display: none;
 }
 
-@media only screen and (min-width: 639px) {
+@media only screen and (min-width: 768px) {
   section.new-tweet {
     margin-top: 140px;
     margin-bottom: 0px;
