@@ -11,11 +11,10 @@ body > header {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-header > div {
-  text-align: center;
-  color: $text-color;
+  > div {
+    text-align: center;
+    color: $text-color;
+  }
 }
 
 #username {

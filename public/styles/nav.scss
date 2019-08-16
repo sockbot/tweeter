@@ -16,17 +16,15 @@ nav {
   display:flex;
   justify-content: space-between;
   align-items: center;
-}
-
-nav .toggle-button {
-  font-family: 'Source Sans Pro', sans-serif;
-  float: right;
-  font-size: 1rem;
-  text-align: center;
-}
-
-nav .toggle-button:hover {
-  text-decoration: underline;
+  .toggle-button {
+    font-family: 'Source Sans Pro', sans-serif;
+    float: right;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .toggle-button:hover {
+    text-decoration: underline;
+  }
 }
 
 .fa-chevron-circle-down {

@@ -54,7 +54,6 @@ main.container {
     max-width: 80%;
     justify-content: center;
   }
-
   body > header {
     /* fix the width of the header to the width of the profile image */
     width: 256px;

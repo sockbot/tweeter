@@ -9,8 +9,7 @@ body > header {
   align-items: center;
   justify-content: center;
 }
-
-header > div {
+body > header > div {
   text-align: center;
   color: white;
 }

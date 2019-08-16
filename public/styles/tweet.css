@@ -4,9 +4,11 @@
   margin: 1em;
   word-wrap: break-word;
 }
-
 .tweet-container:hover {
   box-shadow: 0.8rem 0.8rem #CCCCCC;
+}
+.tweet-container:hover .tweet-handle, .tweet-container:hover .tweet-icons {
+  display: inline;
 }
 
 .tweet-avatar {
@@ -21,14 +23,6 @@
   color: #CCCCCC;
   font-weight: bold;
   display: none;
-}
-
-.tweet-container:hover .tweet-handle {
-  display: inline;
-}
-
-.tweet-container:hover .tweet-icons {
-  display: inline;
 }
 
 .tweet-main {

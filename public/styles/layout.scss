@@ -57,10 +57,10 @@ main.container {
     display: flex;
     max-width: 80%;
     justify-content: center;
-  }
-  body > header {
-    /* fix the width of the header to the width of the profile image */
-    width: 256px;
+    > header {
+      /* fix the width of the header to the width of the profile image */
+      width: 256px;
+    }
   }
   main.container {
     width: calc(100% - 256px);
