@@ -22,7 +22,6 @@ body {
 }
 
 main.container {
-  width: 90%;
   background-color: inherit;
   margin: auto;
   margin-bottom: 120px;
@@ -42,4 +41,23 @@ main.container {
 
 #scroll-up:hover {
   font-size: 3.3rem;
+}
+
+@media only screen and (min-width: 639px) {
+
+  html {
+    display: flex;
+    justify-content: center;
+  }
+  body {
+    display: flex;
+    max-width: 80%;
+    justify-content: center;
+  }
+  body > header {
+    width: 256px;
+  }
+  main.container {
+    width: calc(100% - 256px);
+  }
 }

@@ -1,5 +1,7 @@
 .new-tweet {
   display: none;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 textarea {
@@ -43,4 +45,13 @@ input:hover {
   padding: 1rem;
   font-weight: bold;
   display: none;
+}
+
+@media only screen and (min-width: 639px) {
+  section.new-tweet {
+    margin-top: 140px;
+    margin-bottom: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
