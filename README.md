@@ -12,9 +12,8 @@ Technologies used:
 
 ## Screenshots
 
-![Screencap of composing a new tweet](https://github.com/sockbot/tweeter/blob/master/docs/AwesomeScreenshot-2019-8-15-1565923974166.webm)
-![Screencap #2](https://github.com/sockbot/tweeter/blob/master/docs/AwesomeScreenshot-localhost--2019-08-15_7_54.png)
-![Screencap #3](https://github.com/sockbot/tweeter/blob/master/docs/AwesomeScreenshot-localhost--2019-08-15_7_55.png)
+![Mobile view](https://github.com/sockbot/tweeter/blob/master/docs/AwesomeScreenshot-localhost--2019-08-15_7_54.png)
+![Desktop/tablet view](https://github.com/sockbot/tweeter/blob/master/docs/AwesomeScreenshot-localhost--2019-08-15_7_55.png)
 
 ## How it works
 
